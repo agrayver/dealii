@@ -641,7 +641,7 @@ namespace python
     template <int dim, int spacedim>
     std::pair<int, int>
     find_active_cell_around_point(PointWrapper &          p,
-                                  MappingQGenericWrapper &mapping_wrapper,
+                                  MappingQWrapper &mapping_wrapper,
                                   void *                  triangulation)
     {
       Triangulation<dim, spacedim> *tria =
@@ -671,7 +671,7 @@ namespace python
     template <int dim, int spacedim>
     boost::python::list
     compute_aspect_ratio_of_cells(
-      const MappingQGenericWrapper &mapping_wrapper,
+      const MappingQWrapper &mapping_wrapper,
       const QuadratureWrapper &     quadrature_wrapper,
       const TriangulationWrapper &  triangulation_wrapper)
     {
@@ -1657,7 +1657,7 @@ namespace python
   CellAccessorWrapper
   TriangulationWrapper::find_active_cell_around_point(
     PointWrapper &         p,
-    MappingQGenericWrapper mapping)
+    MappingQWrapper mapping)
   {
     std::pair<int, int> level_index_pair;
     if ((dim == 2) && (spacedim == 2))
@@ -1699,7 +1699,7 @@ namespace python
 
   boost::python::list
   TriangulationWrapper::compute_aspect_ratio_of_cells(
-    const MappingQGenericWrapper &mapping,
+    const MappingQWrapper &mapping,
     const QuadratureWrapper &     quadrature)
   {
     if ((dim == 2) && (spacedim == 2))

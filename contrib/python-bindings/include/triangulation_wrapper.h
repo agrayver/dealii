@@ -284,7 +284,7 @@ namespace python
     CellAccessorWrapper
     find_active_cell_around_point(
       PointWrapper &         p,
-      MappingQGenericWrapper mapping = MappingQGenericWrapper());
+      MappingQWrapper mapping = MappingQWrapper());
 
     /*! @copydoc GridTools::find_cells_adjacent_to_vertex
      */
@@ -338,7 +338,7 @@ namespace python
     /*! @copydoc GridTools::compute_aspect_ratio_of_cells
      */
     boost::python::list
-    compute_aspect_ratio_of_cells(const MappingQGenericWrapper &mapping,
+    compute_aspect_ratio_of_cells(const MappingQWrapper &mapping,
                                   const QuadratureWrapper &     quadrature);
 
     /**
