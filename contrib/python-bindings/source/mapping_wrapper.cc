@@ -134,8 +134,8 @@ namespace python
 
 
   MappingQWrapper::MappingQWrapper(const int dim,
-                                                 const int spacedim,
-                                                 const int degree)
+                                   const int spacedim,
+                                   const int degree)
     : dim(dim)
     , spacedim(spacedim)
     , degree(degree)
@@ -158,8 +158,7 @@ namespace python
 
 
 
-  MappingQWrapper::MappingQWrapper(
-    const MappingQWrapper &other)
+  MappingQWrapper::MappingQWrapper(const MappingQWrapper &other)
   {
     dim      = other.dim;
     spacedim = other.spacedim;
@@ -219,7 +218,7 @@ namespace python
 
   PointWrapper
   MappingQWrapper::transform_unit_to_real_cell(CellAccessorWrapper &cell,
-                                                      PointWrapper &       p)
+                                               PointWrapper &       p)
   {
     AssertThrow(
       dim == p.get_dim(),
@@ -244,7 +243,7 @@ namespace python
 
   PointWrapper
   MappingQWrapper::transform_real_to_unit_cell(CellAccessorWrapper &cell,
-                                                      PointWrapper &       p)
+                                               PointWrapper &       p)
   {
     AssertThrow(
       spacedim == p.get_dim(),
