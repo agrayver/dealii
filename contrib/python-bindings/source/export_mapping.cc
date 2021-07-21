@@ -59,6 +59,13 @@ namespace python
            &MappingQWrapper::project_real_point_to_unit_point_on_face,
            project_real_point_to_unit_point_on_face_docstring,
            boost::python::args("self", "cell", "face_no", "point"));
+
+    // MappingQGeneric was renamed to MappingQ in deal.II.
+    // For compatibility, we define an alias to an old name
+    // At some moment in the future, once MappingQGeneric
+    // is gone, this alias should be removed
+    boost::python::scope().attr("MappingQGeneric") =
+      boost::python::scope().attr("MappingQ");
   }
 } // namespace python
 
